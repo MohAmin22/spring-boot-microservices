@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.example.TrendingMoviesService.grpcApi";
+service TrendingMoviesService {
+  rpc getTrendingMovies(Empty) returns (RatingList);
+}
+
+message Empty {}
+
+message RatingList {
+  repeated Rating ratings = 1;
+}
+
+message Rating {
+  string id = 1;
+  string userId = 2;
+  string movieId = 3;
+  int32 rating = 4;
+}

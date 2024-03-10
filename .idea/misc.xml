@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/spring-boot-microservices-master/movie-info-service/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-microservices-master/ratings-data-service/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-microservices-master/movie-catalog-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-master/Trending-Movies-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-microservices-master/trending-movies-service/pom.xml" />
       </list>
     </option>
   </component>
