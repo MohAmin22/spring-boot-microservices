@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 
 public class MovieCatalogResource {
 
-    private final RestTemplate restTemplate;
 
     private final CatalougService catalougService;
 
@@ -31,11 +30,10 @@ public class MovieCatalogResource {
 
     private final UserRatingService userRatingService;
 
-    public MovieCatalogResource(RestTemplate restTemplate, CatalougService catalougService,
+    public MovieCatalogResource(CatalougService catalougService,
                                 MovieInfoService movieInfoService,
                                 UserRatingService userRatingService) {
 
-        this.restTemplate = restTemplate;
         this.catalougService = catalougService;
         this.movieInfoService = movieInfoService;
         this.userRatingService = userRatingService;
@@ -53,8 +51,8 @@ public class MovieCatalogResource {
         List<Rating> ratings = userRatingService.getUserRating(userId).getRatings();
         return ratings.stream().map(movieInfoService::getCatalogItem).collect(Collectors.toList());
     }
-//    @RequestMapping("/Trending")
-//    public List<String> getMovieNames(){
-//
-//    }
+    @RequestMapping("/Trending")
+    public List<String> getMovieNames(){
+        return catalougService.getTop10();
+    }
 }

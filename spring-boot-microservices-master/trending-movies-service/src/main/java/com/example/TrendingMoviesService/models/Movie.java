@@ -1,41 +1,27 @@
 package com.example.TrendingMoviesService.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
 public class Movie {
 
-    private String movieId;
-    private String name;
-    private String description;
+    @Id
+    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
+    private Long id;
+    private String movieName;
+    private float Rating;
 
     public Movie() {
     }
 
-    public Movie(String movieId, String name, String description) {
-        this.movieId = movieId;
-        this.name = name;
-        this.description = description;
-    }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
