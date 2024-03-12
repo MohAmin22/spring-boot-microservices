@@ -3,16 +3,6 @@ package com.example.TrendingMoviesService.grpcApi;
 option java_multiple_files = true;
 option java_package = "com.example.TrendingMoviesService.grpcApi";
 
-//service CatalogToTrendingService{
-//  rpc getTrendingMovies(Empty) returns (MovieList);
-//}
-//service TrendingToMovieInfo{
-//  rpc getMovieInfo(MovieIdList) returns (MovieList);
-//}
-//service TrendingToRatingData{
-//  rpc getTop10(Empty) returns (MovieIdList);
-//}
-
 service TrendingToRatingData {
   rpc getTrendingMovies(Empty) returns (StringList);
 }
@@ -22,15 +12,3 @@ message Empty {}
 message StringList {
   repeated string movies = 1;
 }
-//message MovieList {
-//  repeated Movie movies = 1;
-//}
-//message MovieIdList {
-//  repeated MovieId movieId = 1;
-//}
-//message MovieId {
-//  int32 movieId = 1;
-//}
-//message Movie {
-//  string movieName = 1;
-//}

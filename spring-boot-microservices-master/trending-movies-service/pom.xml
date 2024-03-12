@@ -9,13 +9,17 @@
         <relativePath/>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>movie-info-service</artifactId>
+    <artifactId>trending-movies-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>movie-info-service</name>
+    <name>trending-movies-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>11</java.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <java.version>19</java.version>
+        <protobuf.version>3.23.4</protobuf.version>
+        <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
+        <grpc.version>1.58.0</grpc.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -54,11 +58,11 @@
             <version>3.0.0.RELEASE</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>net.devh</groupId>-->
-<!--            <artifactId>grpc-client-spring-boot-starter</artifactId>-->
-<!--            <version>2.14.0.RELEASE</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.devh</groupId>-->
+        <!--            <artifactId>grpc-client-spring-boot-starter</artifactId>-->
+        <!--            <version>2.14.0.RELEASE</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
@@ -78,6 +82,7 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>

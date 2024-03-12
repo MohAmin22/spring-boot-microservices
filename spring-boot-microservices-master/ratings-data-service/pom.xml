@@ -81,11 +81,6 @@
             <version>1.3.5</version>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>Grpc</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>

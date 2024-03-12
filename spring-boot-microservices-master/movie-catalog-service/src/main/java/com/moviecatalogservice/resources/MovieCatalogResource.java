@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 
 public class MovieCatalogResource {
 
-
     private final CatalougService catalougService;
 
     private final MovieInfoService movieInfoService;
