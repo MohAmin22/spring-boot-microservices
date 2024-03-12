@@ -4,6 +4,7 @@ import com.moviecatalogservice.models.CatalogItem;
 import com.moviecatalogservice.models.Movie;
 import com.moviecatalogservice.models.Rating;
 import com.moviecatalogservice.models.UserRating;
+import com.moviecatalogservice.services.CatalougService;
 import com.moviecatalogservice.services.MovieInfoService;
 import com.moviecatalogservice.services.UserRatingService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -19,19 +20,23 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/catalog")
+
 public class MovieCatalogResource {
 
     private final RestTemplate restTemplate;
+
+    private final CatalougService catalougService;
 
     private final MovieInfoService movieInfoService;
 
     private final UserRatingService userRatingService;
 
-    public MovieCatalogResource(RestTemplate restTemplate,
+    public MovieCatalogResource(RestTemplate restTemplate, CatalougService catalougService,
                                 MovieInfoService movieInfoService,
                                 UserRatingService userRatingService) {
 
         this.restTemplate = restTemplate;
+        this.catalougService = catalougService;
         this.movieInfoService = movieInfoService;
         this.userRatingService = userRatingService;
     }
@@ -48,4 +53,8 @@ public class MovieCatalogResource {
         List<Rating> ratings = userRatingService.getUserRating(userId).getRatings();
         return ratings.stream().map(movieInfoService::getCatalogItem).collect(Collectors.toList());
     }
+//    @RequestMapping("/Trending")
+//    public List<String> getMovieNames(){
+//
+//    }
 }
